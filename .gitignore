@@ -1,0 +1,26 @@
+#文件向给git 提交忽略的文件
+*.class
+*.war
+*.ear
+#maven 的忽略文件
+target/
+*.orig
+#eclipse ignore
+.settings/
+.project
+.classpath
+#idea
+.idea/
+/idea/
+*.ipr
+*.iml
+*.iws
+# temp文件
+*.log
+*.cache
+*.diff
+*.patch
+*.tmp
+#system ignore
+.DS_Store
+Thumbs.db
