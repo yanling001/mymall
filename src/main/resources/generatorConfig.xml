@@ -23,7 +23,7 @@
                 driverClass="com.mysql.jdbc.Driver"
                 connectionURL="jdbc:mysql://localhost:3306/mmall?characterEncoding=utf-8"
                 userId="root"
-                password="123456">
+                password="12345678">
         </jdbcConnection>
 
 
