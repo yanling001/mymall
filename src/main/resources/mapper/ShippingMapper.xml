@@ -124,7 +124,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.mymall.pojo.Shipping" >
+  <update id="updateByPrimaryKeySelectiveship" parameterType="com.mymall.pojo.Shipping" >
     update mmall_shipping
     <set >
       <if test="userId != null" >

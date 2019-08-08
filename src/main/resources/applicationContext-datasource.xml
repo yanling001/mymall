@@ -28,7 +28,7 @@
         <property name="driverClassName" value="${db.driverClassName}"/>
         <property name="url" value="${db.url}"/>
         <property name="username" value="${db.username}"/>
-        <property name="password" value="${db.password}78"/>
+        <property name="password" value="${db.password}"/>
         <!-- 连接池启动时的初始值 -->
         <property name="initialSize" value="${db.initialSize}"/>
         <!-- 连接池的最大值 -->
