@@ -26,7 +26,7 @@ public class ProductController {
     public ServiceResponse detail(Integer productid){
         return iProductService.getProductDetail(productid);
     }
-    @RequestMapping("detail.action")
+    @RequestMapping("list.action")
     @ResponseBody
     //用户搜索的list分页
     public ServiceResponse<PageInfo> list(@RequestParam(value ="keyword" ,required = false) String keyword,
@@ -34,8 +34,7 @@ public class ProductController {
                                            @RequestParam(value="pagenum",defaultValue = "1") int pagenum,
                                           @RequestParam(value = "pagesize",defaultValue = "10") int pagesize,
                                           @RequestParam(value ="orderBy",defaultValue = "")String orderBy){
-        ArrayList arrayList=new ArrayList();
-        Integer a[]=(Integer [])arrayList.toArray();
+
         return iProductService.getProductByKeywordCategory(keyword,categoryId,pagenum,pagesize,orderBy);
     }
 

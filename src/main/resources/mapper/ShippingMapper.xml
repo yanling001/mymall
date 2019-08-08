@@ -181,7 +181,7 @@
   <delete id="delet" parameterType="map" >
     delete from mmall_shipping where user_id=#{userid} and id=#{shippingid}
   </delete>
-  <update id="updateByPrimaryKeySelective" parameterType="com.mymall.pojo.Shipping" >
+  <update id="updateByPrimaryKeySelectiveship" parameterType="com.mymall.pojo.Shipping" >
   update mmall_shipping
  set  receiver_name = #{receiverName,jdbcType=VARCHAR},
       receiver_phone = #{receiverPhone,jdbcType=VARCHAR},

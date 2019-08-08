@@ -14,7 +14,7 @@ public interface ShippingMapper {
 
     Shipping selectByPrimaryKey(Integer id);
 
-    int updateByPrimaryKeySelective(Shipping record);
+    int updateByPrimaryKeySelectiveship(Shipping record);
 
     int updateByPrimaryKey(Shipping record);
 
