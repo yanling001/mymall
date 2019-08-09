@@ -115,23 +115,24 @@ public class ProductManageController {
     @RequestMapping("/uplod.action")
     @ResponseBody
     //文件上传
-    public ServiceResponse uplod(HttpServletRequest request, @RequestParam("file") MultipartFile file,HttpSession session){
+    public ServiceResponse uplod(HttpServletRequest request, @RequestParam("file") MultipartFile file){
         //校验用户  权限校验
-        User user=(User) session.getAttribute(Const.CURRENT_USER);
-        if(user==null){
-            return ServiceResponse.createByErrorMessage("用户未登录");
-        }
-        if(iUserService.checkAdminRole(user).isSuccess()){
-            String path =request.getSession().getServletContext().getRealPath("uplod");
-            String targetFileName=iFileService.uplod(file,path);
-            String url= PropertiesUtil.getProperty("ftp.server.http.prefix");
+        //User user=(User) session.getAttribute(Const.CURRENT_USER);
+        //if(user==null){
+          //  return ServiceResponse.createByErrorMessage("用户未登录");
+        //}
+        //if(iUserService.checkAdminRole(user).isSuccess()){
+            //String path =request.getSession().getServletContext().getRealPath("upload");
+            String targetFileName=iFileService.uplod(file,"/developer/image");
+            String url= PropertiesUtil.getProperty("ftp.server.http.prefix")+targetFileName;
+            System.out.println(url);
            //将uri和url当做key存入map中
             Map filemap= Maps.newHashMap();
             filemap.put("uri",targetFileName);
             filemap.put("url",url);
             return ServiceResponse.createBysuccessMessage(filemap);
-        }else
-            return  ServiceResponse.createByErrorMessage("无权限操作");
+        //}else
+          //  return  ServiceResponse.createByErrorMessage("无权限操作");
     }
     //富文本的文件上传
     //富文本上传采用前端插件simditor 进行上传
